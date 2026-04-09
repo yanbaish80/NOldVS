@@ -1,0 +1,56 @@
+body {
+    background-color: #121212;
+    color: #e0e0e0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.container {
+    text-align: center;
+}
+
+h1 {
+    color: #478cbf; /* Godot Blue */
+    font-size: 3rem;
+    margin-bottom: 0;
+}
+
+.status span {
+    color: #ffcc00;
+    font-weight: bold;
+}
+
+.card {
+    background: #1e1e1e;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    border: 1px solid #333;
+    margin-top: 20px;
+}
+
+.btn {
+    display: inline-block;
+    background-color: #478cbf;
+    color: white;
+    padding: 15px 30px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: transform 0.2s, background-color 0.2s;
+}
+
+.btn:hover {
+    background-color: #3a75a3;
+    transform: scale(1.05);
+}
+
+.note {
+    font-size: 0.8rem;
+    color: #666;
+    margin-top: 15px;
+}
