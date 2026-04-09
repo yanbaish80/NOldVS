@@ -1,5 +1,5 @@
 # NOldVS (Node-Old-Version-System) 🚀
-**Developer:** yanbaish_80  
+**Developer:** yanbaish_80
 **Status:** Alpha / In-Development 🛠️
 
 NOldVS is a custom C++ module for Godot Engine designed to extend visual scripting capabilities. It provides a specialized environment for creating node-based logic, specifically tailored for game mechanic research, glitch exploitation, and engine-level automation.
@@ -13,8 +13,7 @@ NOldVS is a custom C++ module for Godot Engine designed to extend visual scripti
 ## 📁 Repository Structure
 - `modules/noldvs/` — Core C++ module source code and headers.
 - `tools/builder/` — The `noldvs_builder` source for automated compilation.
-- `tools/addon_manager/` — CLI utility for managing `.novsn` node configurations.
-- `configs/` — Default JSON templates for the "Starter Pack" nodes.
+- `tools/addon_manager/` — CLI utility for managing `.novsn` node configurations (Not finished).
 
 ## 🚀 Installation & Build
 To use this module, you need the Godot Engine source code (v4.3+ recommended).
@@ -24,3 +23,5 @@ To use this module, you need the Godot Engine source code (v4.3+ recommended).
 3. Run the build command using SCons:
    ```bash
    scons platform=windows arch=x86_64 target=editor custom_status="noldvs_dev" -j3
+   
+NOTE: The -j3 flag defines the number of CPU threads. If you have 6 cores or more, you can increase this (e.g., -j6) to make the build significantly faster.
