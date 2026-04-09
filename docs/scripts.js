@@ -1,26 +1,23 @@
-const username = 'yanbaish_80';
-const repo = 'NOldVS';
+const username = 'yanbaish80';
+const repo = 'NOldVS'; 
 
 async function getLatestRelease() {
-    const url = `https://api.github.com/repos/${username}/${repo}/releases`;
+    const url = `https://api.github.com/repos/${username}/${repo}/releases/latest`;
     
     try {
         const response = await fetch(url);
+        if (!response.ok) throw new Error('Release not found (Check if it is a Full Release)');
+        
         const data = await response.json();
+        const downloadUrl = data.assets[0].browser_download_url;
+        const tagName = data.tag_name;
 
-        if (data && data.length > 0) {
-            const latest = data[0]; 
-            const downloadUrl = latest.assets[0].browser_download_url;
-            const tagName = latest.tag_name;
-
-            document.getElementById('version-tag').innerText = "Version: " + tagName;
-            document.getElementById('download-btn').href = downloadUrl;
-        } else {
-            document.getElementById('version-tag').innerText = "No releases found.";
-        }
+        document.getElementById('version-tag').innerText = "Version: " + tagName;
+        document.getElementById('download-btn').href = downloadUrl;
+        
     } catch (error) {
-        console.error("Error fetching release:", error);
-        document.getElementById('version-tag').innerText = "Error loading release info.";
+        console.error("Error:", error);
+        document.getElementById('version-tag').innerText = "Status: Release is in progress...";
     }
 }
 
