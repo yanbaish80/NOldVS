@@ -6,18 +6,28 @@ async function getLatestRelease() {
     
     try {
         const response = await fetch(url);
-        if (!response.ok) throw new Error('Release not found (Check if it is a Full Release)');
+        
+        if (!response.ok) {
+            throw new Error(`GitHub API error: ${response.status}`);
+        }
         
         const data = await response.json();
-        const downloadUrl = data.assets[0].browser_download_url;
-        const tagName = data.tag_name;
-
-        document.getElementById('version-tag').innerText = "Version: " + tagName;
-        document.getElementById('download-btn').href = downloadUrl;
         
+        if (data.assets && data.assets.length > 0) {
+            const downloadUrl = data.assets[0].browser_download_url;
+            const tagName = data.tag_name;
+
+            document.getElementById('version-tag').innerText = "Latest Version: " + tagName;
+            document.getElementById('download-btn').href = downloadUrl;
+            console.log("Success! Linked to: " + downloadUrl);
+        } else {
+            document.getElementById('version-tag').innerText = "Release found, but no files attached.";
+        }
     } catch (error) {
-        console.error("Error:", error);
-        document.getElementById('version-tag').innerText = "Status: Release is in progress...";
+        console.error("Error fetching release:", error);
+        document.getElementById('version-tag').innerText = "Status: API Connection Error";
+
+        alert(error.message); 
     }
 }
 
