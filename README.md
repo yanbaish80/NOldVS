@@ -24,3 +24,5 @@ To use this module, you need the Godot Engine source code (v4.3+ recommended).
    scons platform=windows arch=x86_64 target=editor custom_status="noldvs_dev" -j3
    
 NOTE: The -j3 flag defines the number of CPU threads. If you have 6 cores or more, you can increase this (e.g., -j6) to make the build significantly faster.
+
+Site for download : github.io.yanbaish80/NOldVS
