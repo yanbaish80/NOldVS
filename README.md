@@ -1,6 +1,8 @@
 # NOldVS (Node-Old-Version-System) 🚀
 **Developer:** yanbaish_80
-**Status:** Alpha / In-Development 🛠️
+**Status:** Alpha / In-Development
+
+THE PROJECT HAS BEEN ABANDONED FOR A YEAR AND WILL NOT BE UPDATED FOR A YEAR
 
 NOldVS is a custom C++ module for Godot Engine designed to extend visual scripting capabilities. It provides a specialized environment for creating node-based logic, specifically tailored for game mechanic research, glitch exploitation, and engine-level automation.
 
