@@ -25,4 +25,4 @@ To use this module, you need the Godot Engine source code (v4.3+ recommended).
    
 NOTE: The -j3 flag defines the number of CPU threads. If you have 6 cores or more, you can increase this (e.g., -j6) to make the build significantly faster.
 
-Site for download : github.io.yanbaish80/NOldVS
+Site for download : https://yanbaish80.github.io/NOldVS/#
